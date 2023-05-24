@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="SignUpViewModal"
+            type="com.example.mvvmdemoexample.modal.signup.SignUpViewModal" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".modal.SignUpActivity">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/dimens80dp"
+                android:layout_height="@dimen/dimens80dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens30dp"
+                android:text="@string/sign_up_now"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dimens30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/logo"
+                app:layout_constraintStart_toStartOf="@id/logo"
+                app:layout_constraintTop_toBottomOf="@id/logo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvText"
+                android:layout_width="@dimen/dimens250"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:text="@string/please_fill_the_details_and_create_account"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/tvLogin"
+                app:layout_constraintStart_toStartOf="@id/tvLogin"
+                app:layout_constraintTop_toBottomOf="@id/tvLogin" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TfFullName"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens20dp"
+                android:layout_marginTop="@dimen/dimens30sp"
+                android:hint="@string/full_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:text="@={SignUpViewModal.name}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/Tfemail"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens20dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:hint="@string/email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TfFullName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:text="@={SignUpViewModal.email}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TfPassword"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens20dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:hint="@string/password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Tfemail"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@={SignUpViewModal.password}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvForgetPass"
+                android:layout_width="@dimen/dimens250"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens10dp"
+                android:text="@string/forget_password"
+                android:textAlignment="textEnd"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="@id/TfPassword"
+                app:layout_constraintTop_toBottomOf="@id/TfPassword" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/getImage"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="@dimen/dimens100dp"
+                app:layout_constraintEnd_toStartOf="@id/btnImageLoad"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvForgetPass" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnImageLoad"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="@dimen/dimens70dp"
+                android:layout_marginHorizontal="@dimen/dimens20dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:backgroundTint="@color/black"
+                android:text="@string/upload_image"
+                android:textAllCaps="false"
+                android:textSize="@dimen/dimens20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/getImage"
+                app:layout_constraintTop_toBottomOf="@id/tvForgetPass" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="@dimen/dimen0dp"
+                android:layout_height="@dimen/dimens70dp"
+                android:layout_marginHorizontal="@dimen/dimens20dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textSize="@dimen/dimens20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnImageLoad" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/TvLogin"
+                android:layout_width="@dimen/dimens50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens50sp"
+                android:text="@string/login"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvConnect"
+                app:layout_constraintEnd_toEndOf="@id/btnSignUp"
+                app:layout_constraintStart_toEndOf="@id/tvConnect"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUp"
+                app:layout_constraintTop_toTopOf="@id/tvConnect" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens50sp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:text="@string/already_have_an_account_or_connect_with"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toTopOf="@+id/tv"
+                app:layout_constraintEnd_toStartOf="@id/TvLogin"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/btnSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv"
+                android:layout_width="@dimen/dimens150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens10dp"
+                android:text="@string/or_connect_with"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toTopOf="@+id/facebook"
+                app:layout_constraintEnd_toEndOf="@id/tvConnect"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="@id/tvConnect"
+                app:layout_constraintTop_toBottomOf="@+id/tvConnect" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/facebook"
+                android:layout_width="@dimen/dimens50dp"
+                android:layout_height="@dimen/dimens50dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:layout_marginBottom="@dimen/dimens50dp"
+                android:src="@drawable/facebook_new"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/twitter"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@id/tv"
+                app:layout_constraintTop_toBottomOf="@id/tv" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/twitter"
+                android:layout_width="@dimen/dimens50dp"
+                android:layout_height="@dimen/dimens50dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:layout_marginBottom="@dimen/dimens50dp"
+                android:src="@drawable/twitter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/googlePlus"
+                app:layout_constraintStart_toEndOf="@id/facebook"
+                app:layout_constraintTop_toBottomOf="@id/tv" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/googlePlus"
+                android:layout_width="@dimen/dimens50dp"
+                android:layout_height="@dimen/dimens50dp"
+                android:layout_marginTop="@dimen/dimens20dp"
+                android:layout_marginBottom="@dimen/dimens50dp"
+                android:src="@drawable/gp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/TvLogin"
+                app:layout_constraintStart_toEndOf="@id/twitter"
+                app:layout_constraintTop_toBottomOf="@id/tv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

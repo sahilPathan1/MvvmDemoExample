@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileViewModal"
+            type="com.example.mvvmdemoexample.profileModel.profileViewModel.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".profileModel.ProfileActivity">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileImage"
+            android:layout_width="@dimen/dimens400"
+            android:layout_height="@dimen/dimens400"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvId"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimens50dp"
+            android:layout_marginStart="@dimen/dimens30dp"
+            android:layout_marginTop="@dimen/dimens100dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/dimens40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvEmail"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimens50dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/dimens40sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvId"
+            app:layout_constraintStart_toStartOf="@+id/tvId"
+            app:layout_constraintTop_toBottomOf="@id/tvId" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPassword"
+            android:layout_width="@dimen/dimen0dp"
+            android:layout_height="@dimen/dimens50dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/dimens40sp"
+            app:layout_constraintEnd_toEndOf="@id/tvEmail"
+            app:layout_constraintStart_toStartOf="@id/tvEmail"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
